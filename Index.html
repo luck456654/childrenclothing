@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/mobile.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <title>Пижамы для девочек</title>
+
+</head>
+
+<body>
+    <div id="app">
+
+        <section class="header">
+            <div class="header__burger-content">
+                <div v-on:click='removeBurgerForm'>
+                    <svg class="header__burger-svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <line x1="5.01046" y1="18.2822" x2="18.6464" y2="4.6462" stroke="#333333" />
+                        <line y1="-0.5" x2="19.2842" y2="-0.5"
+                            transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 19 18.6357)" stroke="#333333" />
+                    </svg>
+                </div>
+                <ul class="header__reset-list">
+                    <li><a href="" class="header__burger-link">ПОСТЕЛЬНОЕ БЕЛЬЕ</a></li>
+                    <li class="header__burger-link header__burger-home">ОДЕЖДА ДЛЯ ДОМА</li>
+                    <li class="header__burger-link">ОДЕЖДА ДЛЯ УЛИЦЫ</li>
+                    <li class="header__burger-link header__burger-exit">ВЫХОД</li>
+                </ul>
+            </div>
+            <div class="container">
+                <div class="header__content">
+                    <img src="img/LOGO.png" class="header__logo" alt="Логотип">
+                    <div class="header__form">
+                        <svg class="header__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12.4595" cy="8.18919" r="3.68919" stroke="#333333" />
+                            <path d="M4.5 19.3379H19.5" stroke="#333333" />
+                            <path
+                                d="M4.5 19.84C4.5 16.4347 8.84699 13.9134 12.2143 14.0023C15.4328 14.0872 19.5 16.4347 19.5 19.84"
+                                stroke="#333333" />
+                        </svg>
+                        <svg class="header__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.9 7.0948C10.6998 1.47892 1.40881 5.90389 5.76037 11.6018C10.1119 17.2996 12.4 19.4908 12.4 19.4908"
+                                stroke="#333333" />
+                            <path
+                                d="M11.8941 7.0948C13.0944 1.47892 22.7304 5.90389 18.3789 11.6018C14.0273 17.2996 11.7 19.5 11.7 19.5"
+                                stroke="#333333" />
+                            <path d="M11.391 6.70752L12.4043 6.70757L12.3834 7.24079H11.391V6.70752Z" fill="#333333" />
+                        </svg>
+                        <svg class="header__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.25468 10.5659C5.13958 9.11201 6.2884 7.86865 7.74689 7.86865H16.2531C17.7116 7.86865 18.8604 9.11201 18.7453 10.566L18.2203 17.1975C18.1174 18.4977 17.0323 19.5002 15.7281 19.5002H8.27189C6.96769 19.5002 5.88261 18.4977 5.77968 17.1975L5.25468 10.5659Z"
+                                stroke="#333333" />
+                            <path d="M7.99999 12.5C7.99999 12.5 7.78329 4 12 4C16.2167 4 16 12.5 16 12.5"
+                                stroke="#333333" />
+                        </svg>
+                        <div @click.prevent='close'>
+                            <svg class="header__burger" width="18" height="13" viewBox="0 0 18 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <line y1="0.5" x2="18" y2="0.5" stroke="#333333" />
+                                <line y1="12.5" x2="18" y2="12.5" stroke="#333333" />
+                                <line y1="6.5" x2="18" y2="6.5" stroke="#333333" />
+                            </svg>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="main" v-on:click='removeBurgerForm'>
+            <div class="container ">
+                <div class="main__content">
+                    <div class="main__left">
+                        <div class="main__active-foto">
+                            <img src="./img/mainpaint.png" id="paint1" class="main__foto-link"
+                                v-on:click="changeFoto('paint1')" alt="Детская одежда">
+                            <img src="./img/paint1 (1).png" class="main__foto-link" id="paint2"
+                                v-on:click="changeFoto('paint2')" alt="Детская одежда">
+                            <img src="./img/paint2.png" class="main__foto-link" id="paint3"
+                                v-on:click="changeFoto('paint3')" alt="Детская одежда">
+                            <img src="./img/paint3.png" class="main__foto-link" id="paint4"
+                                v-on:click="changeFoto('paint4')" alt="Детская одежда">
+                            <img src="./img/paint4.png" class="main__foto-link" id="paint5"
+                                v-on:click="changeFoto('paint5')" alt="Детская одежда">
+                        </div>
+                    </div>
+                    <div class="main__right">
+                        <p class="main__right-title">Пижама для девочек</p>
+                        <p class="main__right-art">Арт. 02765/46</p>
+                        <p class="main__right-reviews"><span class="main__reviews">Отзывы</span>
+                            <svg class="main__stars" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5 7.635L8.09 9.5L7.27 5.985L10 3.62L6.405 3.315L5 0L3.595 3.315L0 3.62L2.73 5.985L1.91 9.5L5 7.635Z"
+                                    fill="#333333" />
+                            </svg>
+                            <svg class="main__stars" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5 7.635L8.09 9.5L7.27 5.985L10 3.62L6.405 3.315L5 0L3.595 3.315L0 3.62L2.73 5.985L1.91 9.5L5 7.635Z"
+                                    fill="#333333" />
+                            </svg>
+
+                            <svg class="main__stars" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5 7.635L8.09 9.5L7.27 5.985L10 3.62L6.405 3.315L5 0L3.595 3.315L0 3.62L2.73 5.985L1.91 9.5L5 7.635Z"
+                                    fill="#333333" />
+                            </svg>
+
+                            <svg class="main__stars" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5 7.635L8.09 9.5L7.27 5.985L10 3.62L6.405 3.315L5 0L3.595 3.315L0 3.62L2.73 5.985L1.91 9.5L5 7.635Z"
+                                    fill="#333333" />
+                            </svg>
+
+                            <svg class="main__stars" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5 2.565L5.485 3.71L5.72 4.265L6.32 4.315L7.555 4.42L6.615 5.235L6.16 5.63L6.295 6.22L6.575 7.425L5.515 6.785L5 6.465L4.485 6.775L3.425 7.415L3.705 6.21L3.84 5.62L3.385 5.225L2.445 4.41L3.68 4.305L4.28 4.255L4.515 3.7L5 2.565ZM5 0L3.595 3.315L0 3.62L2.73 5.985L1.91 9.5L5 7.635L8.09 9.5L7.27 5.985L10 3.62L6.405 3.315L5 0Z"
+                                    fill="#333333" />
+                            </svg>
+                            14 отзывов
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 1L12 8L4 14.5" stroke="#333333" />
+                            </svg>
+
+                        </p>
+                        <p class="main__right-price">
+                            <b class="main__price-current">800 ₽</b><span class="main__active-price">1 500 ₽ </span>
+                            <svg class="main__price-icon" width="10" height="15" viewBox="0 0 10 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L9 8L1 14.5" stroke="#333333" />
+                            </svg>
+                        </p>
+                        <p><button class="main__button">скидка -36%</button><button class="main__button">акция
+                                -20%</button></p>
+                        <p>
+                            <select class="main__select">
+                                <option>Выбрать размер</option>
+                                <option>Набор1</option>
+                                <option>Набор2</option>
+                                <option>Набор3</option>
+                                <option>Набор4</option>
+                                <option>Набор5</option>
+                                <option>Набор6</option>
+                            </select>
+                        </p>
+                        <p class="main__size"><a href="#">Определить размер</a></p>
+                        <div class="main__card">
+                            <div class="main__form-wrapper">
+                                <div class="main__size-buttons">
+                                    <button class="main__buttons" v-on:click="counter=counter+1">+</button>
+                                    <input type="text" class="main__input">{{counter}}</input>
+                                    <button class="main__buttons" v-on:click="counter= counter-1">-</button>
+                                </div>
+                                <div class="main__fav-content">
+                                    <button class="main__card-button" v-on:click="addCard">Добавить в корзину</button>
+                                    <button class="main__button-favourites" v-on:click="addFav">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M11.9 7.0948C10.6998 1.47892 1.40881 5.90389 5.76037 11.6018C10.1119 17.2996 12.4 19.4908 12.4 19.4908"
+                                                stroke="white" />
+                                            <path
+                                                d="M11.8941 7.0948C13.0944 1.47892 22.7304 5.90389 18.3789 11.6018C14.0273 17.2996 11.7 19.5 11.7 19.5"
+                                                stroke="white" />
+                                            <path d="M11.391 6.70752L12.4043 6.70757L12.3834 7.24079H11.391V6.70752Z"
+                                                fill="white" />
+                                        </svg>
+
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="main__right-linkp"><a href="" class="main__right-link">Купить в 1 клик</a></p>
+                            <hr class="main__hr" />
+                            <div class="main__ul">
+                                <ul class="main__reset-list">
+                                    <li class="main__services">
+                                        <svg class="main__services-svg" width="20" height="20" viewBox="0 0 20 20"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="10" cy="10" r="7" stroke="#333333" />
+                                            <path
+                                                d="M6 8C6.24928 8 8.75787 6.5 8.75787 6.5H10.0043H11.2507C11.2507 6.5 13.7507 8 14 8"
+                                                stroke="#333333" />
+                                            <path d="M6.01577 7.39283L6.01576 9.17806L7.76075 9.4756L7.76075 13.9386"
+                                                stroke="#333333" />
+                                            <path d="M13.9842 7.39283L13.9842 9.17806L12.2393 9.4756L12.2478 13.9386"
+                                                stroke="#333333" />
+                                            <line x1="7.51145" y1="13.4385" x2="12.4971" y2="13.4385"
+                                                stroke="#333333" />
+                                            <path
+                                                d="M8.50859 6.5C8.50859 6.5 9.00716 8.28522 10.0043 8.28522C11.0014 8.28522 11.5 6.5 11.5 6.5"
+                                                stroke="#333333" />
+                                        </svg>
+                                        <a href=""> Описание товара</a>
+                                    </li>
+                                    <li class="main__services">
+                                        <svg class="main__services-svg" width="20" height="20" viewBox="0 0 20 20"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="10" cy="10" r="7" fill="white" stroke="#333333" />
+                                            <path d="M9.55453 5.5L9.55453 10.7061L13.5 13" stroke="#333333" />
+                                        </svg>
+                                        <a href="">Доставка и возврат</a>
+                                    </li>
+                                    <li class="main__services">
+                                        <svg class="main__services-svg" width="20" height="20" viewBox="0 0 20 20"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="3.5" y="5.5" width="13" height="9" rx="0.5" stroke="#333333" />
+                                            <rect x="4" y="8" width="12" height="2" fill="#333333" />
+                                        </svg>
+                                        <a href="">Способы оплаты</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gallery">
+            <div class="container">
+                <h2 class="gallery__h2"><a href="" class="gallery__title">Посмотреть все стили</a></h2>
+                <div class="gallery__content">
+                    <div class="gallery__left">
+                        <picture>
+                            <source srcset="img/paint5-2.png" media="(max-width:767px)">
+                            <img src="img/paint5.png" class="gallery__img-main" />
+                        </picture>
+
+                    </div>
+                    <div class="gallery__right">
+                        <div class="gallery__wrapper">
+                            <div src="img/paint6.png" class="gallery__img-first">
+                                <div class="gallery__inner">
+                                    <svg class="gallery__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="4.5" y="6.5" width="13" height="13" rx="1.5" stroke="white" />
+                                        <path
+                                            d="M6.33784 6.63126L6.33784 6.49958C6.33784 5.39501 7.23327 4.49958 8.33784 4.49958L17.5 4.49959C18.6045 4.49959 19.5 5.39502 19.5 6.49959L19.5 15.9382C19.5 16.9853 18.5159 17.7537 17.5 17.4997V17.4997"
+                                            stroke="white" />
+                                    </svg>
+                                    <svg class="gallery__content" width="32" height="35" viewBox="0 0 32 35" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.752161 10.9953C0.638177 9.54198 1.78674 8.2998 3.24451 8.2998H28.7555C30.2133 8.2998 31.3618 9.54198 31.2478 10.9953L29.5851 32.1953C29.4831 33.4962 28.3976 34.4998 27.0927 34.4998H4.90725C3.60235 34.4998 2.51694 33.4962 2.41491 32.1953L0.752161 10.9953Z"
+                                            stroke="white" />
+                                        <path
+                                            d="M7.004 18.4857C7.004 18.4857 6.54373 1 15.5 1C24.4563 1 23.996 18.4857 23.996 18.4857"
+                                            stroke="white" />
+                                    </svg>
+                                    <p class="gallery__inner-title">Узнай, что на мне</p>
+                                    <div class="gallery__likes-content">
+                                        <svg class="gallery__likes" width="16" height="16" viewBox="0 0 16 16"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M8.42873 3.25725L9.76116 1.03654L13.1965 1.46595L14.5 3.63849V6.32062L8.01449 14.1959L1.93878 6.2507L1.05633 4.04458L2.34555 1.89588L5.35443 0.606363L7.61587 3.32009L8.06654 3.86089L8.42873 3.25725Z"
+                                                fill="white" stroke="white" />
+                                            <path
+                                                d="M7.9 3.0948C6.6998 -2.52108 -2.59121 1.90389 1.76035 7.60175C6.11191 13.2996 8.40001 15.4908 8.40001 15.4908"
+                                                stroke="white" />
+                                            <path
+                                                d="M7.89413 3.0948C9.09434 -2.52108 18.7304 1.90389 14.3788 7.60175C10.0273 13.2996 7.7 15.5 7.7 15.5"
+                                                stroke="white" />
+                                            <path d="M7.39098 2.70752L8.40429 2.70757L8.38335 3.24079H7.39098V2.70752Z"
+                                                fill="white" />
+                                        </svg>200
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div src="img/paint7.png" class="gallery__img-second">
+                                <div class="gallery__inner">
+                                    <svg class="gallery__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="4.5" y="6.5" width="13" height="13" rx="1.5" stroke="white" />
+                                        <path
+                                            d="M6.33784 6.63126L6.33784 6.49958C6.33784 5.39501 7.23327 4.49958 8.33784 4.49958L17.5 4.49959C18.6045 4.49959 19.5 5.39502 19.5 6.49959L19.5 15.9382C19.5 16.9853 18.5159 17.7537 17.5 17.4997V17.4997"
+                                            stroke="white" />
+                                    </svg>
+                                    <svg class="gallery__content" width="32" height="35" viewBox="0 0 32 35" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.752161 10.9953C0.638177 9.54198 1.78674 8.2998 3.24451 8.2998H28.7555C30.2133 8.2998 31.3618 9.54198 31.2478 10.9953L29.5851 32.1953C29.4831 33.4962 28.3976 34.4998 27.0927 34.4998H4.90725C3.60235 34.4998 2.51694 33.4962 2.41491 32.1953L0.752161 10.9953Z"
+                                            stroke="white" />
+                                        <path
+                                            d="M7.004 18.4857C7.004 18.4857 6.54373 1 15.5 1C24.4563 1 23.996 18.4857 23.996 18.4857"
+                                            stroke="white" />
+                                    </svg>
+                                    <p class="gallery__inner-title">Узнай, что на мне</p>
+                                    <div class="gallery__likes-content">
+                                        <svg class="gallery__likes" width="16" height="16" viewBox="0 0 16 16"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M8.42873 3.25725L9.76116 1.03654L13.1965 1.46595L14.5 3.63849V6.32062L8.01449 14.1959L1.93878 6.2507L1.05633 4.04458L2.34555 1.89588L5.35443 0.606363L7.61587 3.32009L8.06654 3.86089L8.42873 3.25725Z"
+                                                fill="white" stroke="white" />
+                                            <path
+                                                d="M7.9 3.0948C6.6998 -2.52108 -2.59121 1.90389 1.76035 7.60175C6.11191 13.2996 8.40001 15.4908 8.40001 15.4908"
+                                                stroke="white" />
+                                            <path
+                                                d="M7.89413 3.0948C9.09434 -2.52108 18.7304 1.90389 14.3788 7.60175C10.0273 13.2996 7.7 15.5 7.7 15.5"
+                                                stroke="white" />
+                                            <path d="M7.39098 2.70752L8.40429 2.70757L8.38335 3.24079H7.39098V2.70752Z"
+                                                fill="white" />
+                                        </svg>200
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery__wrapper">
+                            <div src="img/paint8.png" class="gallery__img-third">
+                                <div class="gallery__inner">
+                                    <svg class="gallery__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="4.5" y="6.5" width="13" height="13" rx="1.5" stroke="white" />
+                                        <path
+                                            d="M6.33784 6.63126L6.33784 6.49958C6.33784 5.39501 7.23327 4.49958 8.33784 4.49958L17.5 4.49959C18.6045 4.49959 19.5 5.39502 19.5 6.49959L19.5 15.9382C19.5 16.9853 18.5159 17.7537 17.5 17.4997V17.4997"
+                                            stroke="white" />
+                                    </svg>
+                                    <svg class="gallery__content" width="32" height="35" viewBox="0 0 32 35" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.752161 10.9953C0.638177 9.54198 1.78674 8.2998 3.24451 8.2998H28.7555C30.2133 8.2998 31.3618 9.54198 31.2478 10.9953L29.5851 32.1953C29.4831 33.4962 28.3976 34.4998 27.0927 34.4998H4.90725C3.60235 34.4998 2.51694 33.4962 2.41491 32.1953L0.752161 10.9953Z"
+                                            stroke="white" />
+                                        <path
+                                            d="M7.004 18.4857C7.004 18.4857 6.54373 1 15.5 1C24.4563 1 23.996 18.4857 23.996 18.4857"
+                                            stroke="white" />
+                                    </svg>
+                                    <p class="gallery__inner-title">Узнай, что на мне</p>
+                                    <div class="gallery__likes-content">
+                                        <svg class="gallery__likes" width="16" height="16" viewBox="0 0 16 16"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M8.42873 3.25725L9.76116 1.03654L13.1965 1.46595L14.5 3.63849V6.32062L8.01449 14.1959L1.93878 6.2507L1.05633 4.04458L2.34555 1.89588L5.35443 0.606363L7.61587 3.32009L8.06654 3.86089L8.42873 3.25725Z"
+                                                fill="white" stroke="white" />
+                                            <path
+                                                d="M7.9 3.0948C6.6998 -2.52108 -2.59121 1.90389 1.76035 7.60175C6.11191 13.2996 8.40001 15.4908 8.40001 15.4908"
+                                                stroke="white" />
+                                            <path
+                                                d="M7.89413 3.0948C9.09434 -2.52108 18.7304 1.90389 14.3788 7.60175C10.0273 13.2996 7.7 15.5 7.7 15.5"
+                                                stroke="white" />
+                                            <path d="M7.39098 2.70752L8.40429 2.70757L8.38335 3.24079H7.39098V2.70752Z"
+                                                fill="white" />
+                                        </svg>200
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div src="img/paint9.png" class="gallery__img-four">
+                                <div class="gallery__inner">
+                                    <svg class="gallery__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="4.5" y="6.5" width="13" height="13" rx="1.5" stroke="white" />
+                                        <path
+                                            d="M6.33784 6.63126L6.33784 6.49958C6.33784 5.39501 7.23327 4.49958 8.33784 4.49958L17.5 4.49959C18.6045 4.49959 19.5 5.39502 19.5 6.49959L19.5 15.9382C19.5 16.9853 18.5159 17.7537 17.5 17.4997V17.4997"
+                                            stroke="white" />
+                                    </svg>
+                                    <svg class="gallery__content" width="32" height="35" viewBox="0 0 32 35" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.752161 10.9953C0.638177 9.54198 1.78674 8.2998 3.24451 8.2998H28.7555C30.2133 8.2998 31.3618 9.54198 31.2478 10.9953L29.5851 32.1953C29.4831 33.4962 28.3976 34.4998 27.0927 34.4998H4.90725C3.60235 34.4998 2.51694 33.4962 2.41491 32.1953L0.752161 10.9953Z"
+                                            stroke="white" />
+                                        <path
+                                            d="M7.004 18.4857C7.004 18.4857 6.54373 1 15.5 1C24.4563 1 23.996 18.4857 23.996 18.4857"
+                                            stroke="white" />
+                                    </svg>
+                                    <p class="gallery__inner-title">Узнай, что на мне</p>
+                                    <div class="gallery__likes-content">
+                                        <svg class="gallery__likes" width="16" height="16" viewBox="0 0 16 16"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M8.42873 3.25725L9.76116 1.03654L13.1965 1.46595L14.5 3.63849V6.32062L8.01449 14.1959L1.93878 6.2507L1.05633 4.04458L2.34555 1.89588L5.35443 0.606363L7.61587 3.32009L8.06654 3.86089L8.42873 3.25725Z"
+                                                fill="white" stroke="white" />
+                                            <path
+                                                d="M7.9 3.0948C6.6998 -2.52108 -2.59121 1.90389 1.76035 7.60175C6.11191 13.2996 8.40001 15.4908 8.40001 15.4908"
+                                                stroke="white" />
+                                            <path
+                                                d="M7.89413 3.0948C9.09434 -2.52108 18.7304 1.90389 14.3788 7.60175C10.0273 13.2996 7.7 15.5 7.7 15.5"
+                                                stroke="white" />
+                                            <path d="M7.39098 2.70752L8.40429 2.70757L8.38335 3.24079H7.39098V2.70752Z"
+                                                fill="white" />
+                                        </svg>200
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="aboutus">
+            <div class="container aboutus__wrapper">
+                <div class="aboutus__uls">
+                    <ul class="aboutus__ul">
+                        <p class="aboutus__title">ПОКУПАТЕЛЯМ</p>
+                        <li class="aboutus__li">Каталог</li>
+                        <li class="aboutus__li">Акции</li>
+                        <li class="aboutus__li">Бренды</li>
+                    </ul>
+
+
+                    <ul class="aboutus__aboutus">
+                        <p class="aboutus__title aboutus__aboutus-title">О НАС</p>
+                        <li class="aboutus__li">О компании</li>
+                        <li class="aboutus__li">Новости</li>
+                        <li class="aboutus__li">Команда</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="aboutus__form-title">УЗНАЙТЕ ПЕРВЫМИ О НОВИНКАХ И АКЦИЯХ</p>
+                    <form id="form">
+
+                        <input type="text" class="aboutus__input form-control" placeholder="Адрес электронной почты"
+                            name="name" id="email">
+
+                        <p class="aboutus__wrapper-button">
+                            <button class="aboutus__button btn btn-primary" id="submit-btn">Подписаться</button>
+                        </p>
+                    </form>
+                </div>
+            </div>   
+    </section>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!',
+                counter: 1,
+            },
+            methods: {
+                changeFoto(id) {
+
+                    let fotos = document.querySelectorAll(".main__foto-link")
+                    let paint = document.querySelector(".main__active-foto")
+
+                    paint.classList.remove("main__paint1");
+                    paint.classList.remove("main__paint2");
+                    paint.classList.remove("main__paint3");
+                    paint.classList.remove("main__paint4");
+                    paint.classList.remove("main__paint5");
+                    switch (id) {
+                        case 'paint1': paint.classList.add("main__paint1"); break;
+                        case 'paint2': paint.classList.add("main__paint2"); break;
+                        case 'paint3': paint.classList.add("main__paint3"); break;
+                        case 'paint4': paint.classList.add("main__paint4"); break;
+                        case 'paint5': paint.classList.add("main__paint5"); break;
+                    }
+                },
+                addCard() {
+                    alert("товар в количестве " + this.counter + " единиц добавлен в корзину")
+                },
+                addFav() {
+                    alert("товар в количестве " + this.counter + " единиц добавлен в избранное")
+                },
+                close() {
+                    let burgerContent = document.querySelector(".header__burger-content")
+                    burgerContent.classList.add("showBurgerForm");
+                },
+                removeBurgerForm() {
+                    let burgerContent = document.querySelector(".header__burger-content")
+                    burgerContent.classList.remove("showBurgerForm");
+                }
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>
